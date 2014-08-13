@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2014-07-26
+  message: MyText
+  frequency_day: 
+  frequency_week: 
+  frequency_twoweek: 
+  frequency_month: 
+  method_text: 
+  method_email: 
+
+two:
+  date: 2014-07-26
+  message: MyText
+  frequency_day: 
+  frequency_week: 
+  frequency_twoweek: 
+  frequency_month: 
+  method_text: 
+  method_email: 

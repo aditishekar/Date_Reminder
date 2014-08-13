@@ -1,0 +1,62 @@
+<h1> DATE REMINDERS </h1>
+
+    <% flash.each do |type, msg| -%>
+    <%= content_tag :div, msg, class: type %>
+    <% end -%>
+
+<h2> Always remember your most important dates. Never get in trouble again.</h2>
+
+<%= form_for @email, url: confirm_path, html: {class: "input_form"} do |f| %>
+	
+	<%= f.fields_for :reminders do |reminders_form| %>
+
+        <%= reminders_form.label :date, 'Date*' %>
+        <%= reminders_form.date_field :date %><br/>
+ 
+ <!-- Should add a section on what it's for -->
+        
+        <%= reminders_form.label :date_type, 'What is this reminder for?*' %>
+        <%= reminders_form.select :date_type, ["Birthday", "Anniversary", "Other"] %><br/>
+
+        <%= reminders_form.label :message, 'Message*' %>
+        <%= reminders_form.text_area :message %><br/>
+
+		<p class="opt-in">When would you like us to remind you?</p>
+
+		<div>
+        	<%= reminders_form.check_box :frequency_day %>
+    	    <%= reminders_form.label :frequency_day, "1 Day Before" %><br/>
+    	</div>
+
+        <%= reminders_form.check_box :frequency_week %>
+        <%= reminders_form.label :frequency_week, "1 Week Before" %><br/>
+        
+        <%= reminders_form.check_box :frequency_twoweek %>
+        <%= reminders_form.label :frequency_twoweek, "2 Weeks Before" %><br/>
+        
+        <%= reminders_form.check_box :frequency_month %>
+        <%= reminders_form.label :frequency_month, "1 Month Before" %><br/>
+
+        <p class="opt-in">By what method should we send your reminders?</p>
+
+        <%= reminders_form.check_box :method_text %>
+        <%= reminders_form.label :method_text, "Remind me via text" %><br/>
+
+        <%= reminders_form.check_box :method_email %>
+        <%= reminders_form.label :method_email, "Remind me via email" %><br/><br/>
+        
+
+    <% end %>
+
+	<%= f.label :email, "Email*" %>:
+  	<%= f.email_field :email %><br/>
+
+	<%= f.check_box :opt_in %>
+	<%= f.label :opt_in, "Yes, I'd like to receive updates on random things" %>:<br/><br/>
+
+  	<%= f.submit "Submit" %>
+
+<% end %>
+
+
+
