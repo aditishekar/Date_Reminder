@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801211151) do
+ActiveRecord::Schema.define(version: 20140817173559) do
 
   create_table "emails", force: true do |t|
     t.string   "email"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140801211151) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "sms"
+    t.integer  "phone_number"
   end
 
   create_table "reminders", force: true do |t|

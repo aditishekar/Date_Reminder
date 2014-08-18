@@ -26,6 +26,16 @@ class RemindersController < ApplicationController
 		   flash[:error] = "**Try again, you're missing some crutial information.**"
 		   redirect_to root_path
 	    end
+
+	    respond_to do |format|
+           if @email.save
+        # Tell the ReminderMailer to send a welcome email after save
+              ReminderMailer.welcome_email(@email).deliver
+ 
+        	  format.html { redirect_to(@email, notice: 'User was successfully created.') }
+        	  format.json { render json: @email, status: :created, location: @email }
+           end
+
 	end
 
 # Add validations to your error message & display those things in your flash message
@@ -38,17 +48,6 @@ class RemindersController < ApplicationController
   	def reminder_params
     	params.require(:email).require(:reminders_attributes).require("0").permit!
 	end
-
-
-
-
-	# def confirm
-
-	# end
-
-	# def delete
-
-	# end
 
 ## End of Class
 end
