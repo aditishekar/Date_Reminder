@@ -34,7 +34,12 @@ class RemindersController < ApplicationController
  
         	  format.html { redirect_to(@email, notice: 'User was successfully created.') }
         	  format.json { render json: @email, status: :created, location: @email }
-           end
+
+		# Try to figure how to WTFing send SMS via Twilio if someone clicks that option
+		#text_to do |format|
+		#	if @phone_number.save 
+
+        #  end
 
 	end
 
