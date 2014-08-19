@@ -39,7 +39,7 @@ class RemindersController < ApplicationController
 		#text_to do |format|
 		#	if @phone_number.save 
 
-        #  end
+        end
 
 	end
 
