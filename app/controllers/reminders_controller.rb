@@ -53,12 +53,12 @@ class RemindersController < ApplicationController
 
 	private
 
-  	def email_params
-    	params.require(:email).permit(:email, :opt_in, :sms)
-	end
-  	def reminder_params
-    	params.require(:email).require(:reminders_attributes).require("0").permit!
-	end
+	  	def email_params
+	    	params.require(:email).permit(:email, :opt_in, :sms)
+		end
+	  	def reminder_params
+	    	params.require(:email).require(:reminders_attributes).require("0").permit!
+		end
 
 ## End of Class
 end
