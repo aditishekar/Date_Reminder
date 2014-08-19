@@ -12,20 +12,111 @@
  *= require_tree .
  */
 
-* { 
+body { 
 	background: #FBE800;
-	font-family: Arial;
+	font-family: Helvetica;
+	padding: 50px;
 }
 
 h1 {
 	color: #12B1F2;
 	font-size: 50px;
 	text-align: center;
+	margin-bottom: 5px;
 }
 
 h2 {
 	color: #F41C54;
-	font-weight: normal;
+	font-weight: bold;
+	font-style: italic;
 	font-size: 20px;
 	text-align: center;
+	text-align: center;
+}
+
+h3 {
+	color: black;
+	font-weight: normal;
+	font-size: 15px;
+	text-align: center;
+}
+
+h4 {
+	color: black;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+a {
+	color: #F41C54;
+	text-decoration: none;
+}
+
+section.index {
+	padding: 10px 25px;
+	font-size: 15px;
+	margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+section.reminders_form {
+	padding: 20px 35px;
+	margin: none;
+	height: 600px;
+	background-color: #FBF5A6;
+}
+
+#email_reminders_attributes_0_message {
+	height: 60px;
+	width: 300px;
+}
+
+
+#email_reminders_attributes_0_date_type, 
+#email_reminders_attributes_0_date,
+#email_reminders_attributes_0_message,
+#email_email,
+#email_phone_number {
+	border: 2px solid #F41C54;
+	box-shadow: 0;
+}
+
+/*-- Submit Button Styling --*/
+
+.submit_button {
+	font-size: 14px;
+	height: 35px;
+	width: 75px;
+	background: #6EE80C;
+	border: none;
+	border-radius: 3px 3px 3px 3px;
+}
+
+.submit_button:hover { 
+	background-color: #ACFD0D;
+}
+
+/*-- Footer Styling --*/
+
+.footer {
+	padding-left: 1em;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.heart {
+	color: #12B1F2;
+}
+
+ul.footer-tags {
+	padding: 0em;
+}
+
+.footer-tags li {
+	font-weight: bold;
+    display: inline-block;
+    border-right: 1px solid #EFEFEF;
+    padding: 0 0.5em;
+    margin: 0em;
 }

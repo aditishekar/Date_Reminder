@@ -1,65 +1,86 @@
-<h1> DATE REMINDERS </h1>
+<body>
+
+    <h1> DATE NIGHT POST </h1>
 
     <% flash.each do |type, msg| -%>
     <%= content_tag :div, msg, class: type %>
     <% end -%>
 
-<h2> Always remember your most important dates. Never get in trouble again.</h2>
+    <h2> Helping couples everywhere keep their spark alive.</h2>
 
-<%= form_for @email, url: confirm_path, html: {class: "input_form"} do |f| %>
-	
-	<%= f.fields_for :reminders do |reminders_form| %>
+    <section class="index">
+        <h3>We're re-inventing Date Night. Starting by reminding of you of the most important dates in your relationship. Then sending you ideas for how to spend those days. If you want to learn more, sign up for free reminders below.</h3><br/>
 
-        <%= reminders_form.label :date, 'Date*' %>
-        <%= reminders_form.date_field :date %><br/>
- 
- <!-- Should add a section on what it's for -->
         
-        <%= reminders_form.label :date_type, 'What is this reminder for?*' %>
-        <%= reminders_form.select :date_type, ["Birthday", "Anniversary", "Other"] %><br/>
+        <section class="reminders_form">
+        <h4>Ready to get started? Add a reminder! You can submit all the reminders that your heart desires.</h4>
+        <%= form_for @email, url: confirm_path, html: {class: "input_form"} do |f| %>
+    	
+    	   <%= f.fields_for :reminders do |reminders_form| %>
 
-        <%= reminders_form.label :message, 'Message*' %>
-        <%= reminders_form.text_area :message %><br/>
+                <%= reminders_form.label :date, 'Date*' %>
+                <%= reminders_form.date_field :date %><br/>
+     
+     <!-- Should add a section on what it's for -->
+            
+                <%= reminders_form.label :date_type, "What's this reminder for?*" %>
+                <%= reminders_form.select :date_type, ["Birthday", "Anniversary", "Date Night", "Other"] %><br/>
 
-		<p class="opt-in">When would you like us to remind you?</p>
+                <%= reminders_form.label :message, 'Want to include a note in your reminder?*' %> <br/>
+                <%= reminders_form.text_area :message %><br/>
 
-		<div>
-        	<%= reminders_form.check_box :frequency_day %>
-    	    <%= reminders_form.label :frequency_day, "1 Day Before" %><br/>
-    	</div>
+    		    <p>When would you like us to remind you?</p>
 
-        <%= reminders_form.check_box :frequency_week %>
-        <%= reminders_form.label :frequency_week, "1 Week Before" %><br/>
-        
-        <%= reminders_form.check_box :frequency_twoweek %>
-        <%= reminders_form.label :frequency_twoweek, "2 Weeks Before" %><br/>
-        
-        <%= reminders_form.check_box :frequency_month %>
-        <%= reminders_form.label :frequency_month, "1 Month Before" %><br/>
+                <%= reminders_form.check_box :frequency_day %>
+            	<%= reminders_form.label :frequency_day, "1 Day Before" %><br/>
 
-        <p class="opt-in">By what method should we send your reminders?</p>
+                <%= reminders_form.check_box :frequency_week %>
+                <%= reminders_form.label :frequency_week, "1 Week Before" %><br/>
+                
+                <%= reminders_form.check_box :frequency_twoweek %>
+                <%= reminders_form.label :frequency_twoweek, "2 Weeks Before" %><br/>
+                
+                <%= reminders_form.check_box :frequency_month %>
+                <%= reminders_form.label :frequency_month, "1 Month Before" %><br/>
 
-        <%= reminders_form.check_box :method_text %>
-        <%= reminders_form.label :method_text, "Remind me via text" %><br/>
+                <p>By what method should we send your reminders?</p>
 
-        <%= reminders_form.check_box :method_email %>
-        <%= reminders_form.label :method_email, "Remind me via email" %><br/><br/>
-        
+                <%= reminders_form.check_box :method_text %>
+                <%= reminders_form.label :method_text, "Remind me via text" %><br/>
 
-    <% end %>
+                <%= reminders_form.check_box :method_email %>
+                <%= reminders_form.label :method_email, "Remind me via email" %><br/><br/>
+            
 
-	<%= f.label :email, "Email*" %>:
-  	<%= f.email_field :email %><br/>
+            <% end %>
 
-    <%= f.label :phone_number, "Phone Number" %>:
-    <%= f.telephone_field :phone_number %><br/>
+    	    <%= f.label :email, "Email*" %>:
+      	    <%= f.email_field :email %><br/>
 
-	<%= f.check_box :opt_in %>
-	<%= f.label :opt_in, "Yes, I'd like to receive updates on random things" %>:<br/><br/>
+            <%= f.label :phone_number, "Phone Number" %>:
+            <%= f.telephone_field :phone_number %><br/> <br/>
 
-  	<%= f.submit "Submit" %>
+        	<%= f.check_box :opt_in %>
+        	<%= f.label :opt_in, "Yes, I'd like to receive updates on critical updates from Date Night Post." %><br/><br/><br/>
 
-<% end %>
+          	<%= f.submit "SUBMIT", class: "submit_button" %>
 
+            <% end %>
+        </section>
 
+    </section>
+
+<!-- FOOTER -->
+
+    <div class="footer">
+      <ul class="footer-tags">
+        <li> <a href="#">About</a></li>
+        <li> <a href="#">FAQ</a></li>
+        <li> <a href="#">Contact Us</a></li>
+      </ul>
+      <p>&copy 2014 Date Night Post, Inc.</p>
+      <p> Made with <span class="heart">&hearts;</span> in Brooklyn, NY</p>
+    </div><!-- /.footer -->
+
+</body>
 

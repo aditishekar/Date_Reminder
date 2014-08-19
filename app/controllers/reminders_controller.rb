@@ -13,33 +13,39 @@ class RemindersController < ApplicationController
 		email = Email.new(email_params)
 		email.save
 
+		respond_to do |format|
+           if email.save
+        # Tell the ReminderMailer to send a welcome email after save
+           ReminderMailer.welcome_email(@email).deliver
+ 
+           format.html { redirect_to(@email, notice: 'Email was successfully sent.') }
+           format.json { render json: @email, status: :created, location: @email }
+		
+			#why am i getting errors?	
+			#else
+		    #     format.html { render action: 'new' }
+	      	#	  format.json { render json: @email.errors, status: :unprocessable_entity }
+	      	#end
+      	   
+      	end
+
 		reminder = Reminder.new(reminder_params)
 		reminder.save
 		## Added new reminder to the list of nested reminders
 		reminder.email = @email
 
 		if reminder.save
-		   flash[:notice] = "**We've got that reminder saved!**"
+		   flash[:notice] = "** Thanks, we've got that reminder saved! We'll be in touch shortly. **"
 		   session[:user_id] = params[:emails]
 		   redirect_to root_path
 		else
-		   flash[:error] = "**Try again, you're missing some crutial information.**"
+		   flash[:error] = "** Try again, your reminder DID NOT save. Our crystal ball tells us that you're missing some crutial information. **"
 		   redirect_to root_path
 	    end
-
-	    respond_to do |format|
-           if @email.save
-        # Tell the ReminderMailer to send a welcome email after save
-              ReminderMailer.welcome_email(@email).deliver
- 
-        	  format.html { redirect_to(@email, notice: 'User was successfully created.') }
-        	  format.json { render json: @email, status: :created, location: @email }
 
 		# Try to figure how to WTFing send SMS via Twilio if someone clicks that option
 		#text_to do |format|
 		#	if @phone_number.save 
-
-        end
 
 	end
 
