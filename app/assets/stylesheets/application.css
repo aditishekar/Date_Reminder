@@ -13,7 +13,7 @@
  */
 
 body { 
-	background: #FBE800;
+	background: white;
 	font-family: Helvetica;
 	padding: 50px;
 }
@@ -69,7 +69,7 @@ section.reminders_form {
 }
 
 #email_reminders_attributes_0_message {
-	height: 60px;
+	height: 50px;
 	width: 300px;
 }
 
