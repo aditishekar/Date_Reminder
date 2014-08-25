@@ -84,7 +84,7 @@ DateReminder::Application.configure do
     port:                 587,
     domain:               'datenightpost.com',
     user_name:            '<datenightpost>',
-    password:             '<marlad00>',
+    password:             '<heylover>',
     authentication:       'plain',
     enable_starttls_auto: true  }
 end

@@ -27,7 +27,7 @@
      <!-- Should add a section on what it's for -->
             
                 <%= reminders_form.label :date_type, "What's this reminder for?*" %>
-                <%= reminders_form.select :date_type, ["Birthday", "Anniversary", "Date Night", "Other"] %><br/>
+                <%= reminders_form.select :date_type, ["Birthday", "Anniversary", "Plan a Date Night", "Other"] %><br/>
 
                 <%= reminders_form.label :message, 'Want to include a note in your reminder?*' %> <br/>
                 <%= reminders_form.text_area :message %><br/>
@@ -46,7 +46,7 @@
                 <%= reminders_form.check_box :frequency_month %>
                 <%= reminders_form.label :frequency_month, "1 Month Before" %><br/>
 
-                <p>By what method should we send your reminders?</p>
+                <p>How should we send your reminders?</p>
 
                 <%= reminders_form.check_box :method_text %>
                 <%= reminders_form.label :method_text, "Remind me via text" %><br/>
