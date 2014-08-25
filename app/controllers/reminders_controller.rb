@@ -7,8 +7,6 @@ class RemindersController < ApplicationController
   end
 
   def create
-	##add a validation to see if the email exists other create a new one
-	#email.find
 	@email = Email.find_or_create_by(email_params)
 	@email.reminders << Reminder.new(reminder_params)
 	session[:user_id] = params[:emails]

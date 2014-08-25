@@ -32,7 +32,7 @@ h2 {
 	font-size: 20px;
 	text-align: center;
 	text-align: center;
-	margin-bottom: 5px;
+	margin-bottom: 0px;
 }
 
 h3 {
@@ -54,7 +54,7 @@ a {
 }
 
 section.index {
-	padding: 10px 25px;
+	padding: 5px 25px;
 	font-size: 15px;
 	margin-left: auto;
     margin-right: auto;
@@ -62,9 +62,9 @@ section.index {
 }
 
 section.reminders_form {
-	padding: 20px 35px;
+	padding: 10px 35px;
 	margin: none;
-	height: 600px;
+	height: 630px;
 	background-color: #FBF5A6;
 }
 
