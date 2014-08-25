@@ -9,8 +9,8 @@ class RemindersController < ApplicationController
   def create
 	##add a validation to see if the email exists other create a new one
 	#email.find
-	email = Email.new(email_params)
-	email.reminders << Reminder.new(reminder_params)
+	@email = Email.find_or_create_by(email_params)
+	@email.reminders << Reminder.new(reminder_params)
 	session[:user_id] = params[:emails]
 
 	##Try to figure how to send SMS via Twilio if someone clicks that option
@@ -22,7 +22,7 @@ class RemindersController < ApplicationController
 	#end 
 
     respond_to do |format|
-      if email.save
+      if @email.save
         ReminderMailer.welcome_email(@email).deliver
           format.html { redirect_to root_path, notice: "** Thanks, we've got that reminder saved! We'll be in touch shortly. **" }
           format.json { render json: @email, status: :created, location: @email }

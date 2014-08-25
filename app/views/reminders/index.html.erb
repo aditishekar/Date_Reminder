@@ -5,6 +5,13 @@
 
     <h1> DATE NIGHT POST </h1>
 
+    <% if @email.errors.any? %>
+        <% @email.errors.full_messages.each do |error| %>
+            <%= error %>
+            <br>
+        <% end %>
+    <% end %>
+
     <% flash.each do |type, msg| -%>
     <%= content_tag :div, msg, class: type %>
     <% end -%>
