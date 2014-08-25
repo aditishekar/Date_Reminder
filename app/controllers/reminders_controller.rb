@@ -21,10 +21,10 @@ class RemindersController < ApplicationController
         	ReminderMailer.welcome_email(@email).deliver
 	        	format.html { redirect_to root_path, notice: "** Thanks, we've got that reminder saved! We'll be in touch shortly. **" }
           		format.json { render json: @email, status: :created, location: @email }
-		#	else
+			else
 		    	format.html { render action: 'new', notice: "** Try again, your reminder DID NOT save. Our crystal ball tells us that you're missing some crutial information. **" }
 	      		format.json { render json: @email.errors, status: :unprocessable_entity }
-	    #  	end
+	      	end
 	    end
 	end
 
