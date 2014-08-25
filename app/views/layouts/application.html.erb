@@ -5,7 +5,30 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+  <% if flash[:about].present? %>
+    <p class='#about'>
+      The shortened url is available <%= link_to 'http://localhost:3000/#about',
+	  url_url(flash[:about]) %>.
+    </p>
+  <% end %>
+
+  <% if flash[:FAQ].present? %>
+    <p class='#FAQ'>
+      The shortened url is available <%= link_to 'http://localhost:3000/#FAQ',
+	  url_url(flash[:FAQ]) %>.
+    </p>
+  <% end %>
+
+    <% if flash[:contact].present? %>
+    <p class='#contact'>
+      The shortened url is available <%= link_to 'http://localhost:3000/#contact',
+	  url_url(flash[:contact]) %>.
+    </p>
+  <% end %>
+
 </head>
+
 <body>
 
 <%= yield %>

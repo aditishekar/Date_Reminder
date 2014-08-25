@@ -4,8 +4,15 @@ DateReminder::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'reminders#index'
 
+  resources :urls, :only => [:show, :new, :create, :about, :contact, :FAQ]
+  
   post '/confirm', to: 'reminders#create'
 
+  get '/about', to: 'reminders#about'
+
+  get '/FAQ', to: 'reminders#FAQ'
+
+  get '/contact', to: 'reminders#contact'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

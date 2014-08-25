@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <body>
 
     <h1> DATE NIGHT POST </h1>
@@ -6,14 +9,14 @@
     <%= content_tag :div, msg, class: type %>
     <% end -%>
 
-    <h2> Helping couples everywhere keep their spark alive.</h2>
+    <h2> Helping couples keep their spark alive.</h2>
 
     <section class="index">
-        <h3>We're re-inventing Date Night. Starting by reminding of you of the most important dates in your relationship. Then sending you ideas for how to spend those days. If you want to learn more, sign up for free reminders below.</h3><br/>
+        <h3>We're re-inventing Date Night - starting by reminding of you of the most important dates in your relationship. If you could use some help, sign up for our free reminder service below. We'll also send you some awesome ideas for how to spend those days (& nights).</h3><br/>
 
         
         <section class="reminders_form">
-        <h4>Ready to get started? Add a reminder! You can submit all the reminders that your heart desires.</h4>
+        <h4>Ready to get started? Add a reminder! You can request as many reminders as your heart desires.</h4>
         <%= form_for @email, url: confirm_path, html: {class: "input_form"} do |f| %>
     	
     	   <%= f.fields_for :reminders do |reminders_form| %>
@@ -60,12 +63,13 @@
             <%= f.label :phone_number, "Phone Number" %>:
             <%= f.telephone_field :phone_number %><br/> <br/>
 
-        	<%= f.check_box :opt_in %>
-        	<%= f.label :opt_in, "Yes, I'd like to receive updates on critical updates from Date Night Post." %><br/><br/><br/>
+        	<%= f.check_box :opt_in, {:checked=>true} %>
+        	<%= f.label :opt_in, "Yes, I'd like to receive juicy updates from Date Night Post.", class: "opt_in" %><br/><br/><br/>
 
           	<%= f.submit "SUBMIT", class: "submit_button" %>
 
-            <% end %>
+        <% end %>
+
         </section>
 
     </section>
@@ -74,9 +78,9 @@
 
     <div class="footer">
       <ul class="footer-tags">
-        <li> <a href="#">About</a></li>
-        <li> <a href="#">FAQ</a></li>
-        <li> <a href="#">Contact Us</a></li>
+        <li> <a href="/about">About</a></li>
+        <li> <a href="/FAQ">FAQ</a></li>
+        <li> <a href="/contact">Contact Us</a></li>
       </ul>
       <p>&copy 2014 Date Night Post, Inc.</p>
       <p> Made with <span class="heart">&hearts;</span> in Brooklyn, NY</p>
@@ -84,3 +88,4 @@
 
 </body>
 
+</html>

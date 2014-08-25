@@ -97,6 +97,12 @@ section.reminders_form {
 	background-color: #ACFD0D;
 }
 
+/*-- Opt_In Styling --*/
+
+.opt_in {
+	font-size: 11px;
+}
+
 /*-- Footer Styling --*/
 
 .footer {
