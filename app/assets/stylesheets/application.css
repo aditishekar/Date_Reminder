@@ -12,11 +12,16 @@
  *= require_tree .
  */
 
+html, 
 body { 
-	background: white;
+	height: 100%; 
 	font-family: Helvetica;
-	padding: 50px;
-}
+} 
+
+body { 
+	margin: 0; 
+	padding: 0; 
+} 
 
 h1 {
 	color: #12B1F2;
@@ -26,8 +31,8 @@ h1 {
 }
 
 h2 {
-	color: #F41C54;
-	font-weight: bold;
+	color: #12B1F2;
+	font-weight: normal;
 	font-style: italic;
 	font-size: 20px;
 	text-align: center;
@@ -37,12 +42,22 @@ h2 {
 
 h3 {
 	color: black;
+	font-family: 'gotham rounded',arial,sans-serif;
 	font-weight: normal;
-	font-size: 15px;
-	text-align: justify;
+	font-size: 22px;
+	text-align: center;
 }
 
 h4 {
+	color: #5E6764;
+	font-family: 'Arapey',georgia,serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 15px;
+	text-align: left;
+}
+
+h5 {
 	color: black;
 	font-weight: bold;
 	font-size: 15px;
@@ -53,19 +68,47 @@ a {
 	text-decoration: none;
 }
 
-section.index {
-	padding: 5px 25px;
+
+section.header_box {
+	position: fixed;
+	z-index: 10;
+	height: auto;
+	width: 100%;
+	zoom: 1;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	margin: none;
+	padding: none;
+	border-bottom: 1px solid #d2dcdc;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.index_header {
+	padding: 20px 25px;
 	font-size: 15px;
 	margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 75%;
 }
 
-section.reminders_form {
-	padding: 10px 35px;
+section.reminders_box {
+	position: relative;
+	background: #FFF;
+	top: 190px;
+	left: 0px;
 	margin: none;
-	height: 630px;
-	background-color: #FBF5A6;
+	padding: none;
+	border: none;
+}
+
+
+div.reminders_form {
+	padding: 20px 25px;
+	margin-left: auto;
+    margin-right: auto;
+    height: auto;
+	width: 75%;
 }
 
 #email_reminders_attributes_0_message {
@@ -81,6 +124,46 @@ section.reminders_form {
 #email_sms {
 	border: 2px solid #F41C54;
 	box-shadow: 0;
+}
+
+/*-- Nav Styling --*/
+
+div.nav_bar {
+	top-margin: -10px;
+	font-size: 0.9em;
+	text-align: center;
+	width: auto;
+}
+
+ul.nav_tags {
+    margin: 0px;
+}
+
+.nav_tags li {
+    padding: 0 0.7em;
+    display: inline-block;
+    margin: 1em;
+}
+
+.nav_tags li:hover { 
+	opacity: 0.6;
+}
+
+.elevator_pitch_box {
+	position: relative;
+	background-color: #F6F6F6;
+	top: 185px;
+	left: 0px;
+	margin: none;
+	padding: none;
+	border-bottom: 1px solid #d2dcdc;
+}
+
+.elevator_pitch {
+	padding: 20px 25px;
+	margin-left: auto;
+    margin-right: auto;
+    width: 75%;
 }
 
 /*-- Submit Button Styling --*/
@@ -126,4 +209,16 @@ ul.footer-tags {
     border-right: 1px solid #EFEFEF;
     padding: 0 0.5em;
     margin: 0em;
+}
+
+/*-- Lightbox Styling --*/
+
+.lightbox {
+    position:fixed; /* keeps the lightbox window in the current viewport */
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    background:url(overlay.png) repeat; 
+    text-align:center;
 }

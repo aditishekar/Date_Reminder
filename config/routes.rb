@@ -14,6 +14,8 @@ DateReminder::Application.routes.draw do
 
   get '/contact', to: 'reminders#contact'
 
+  get '/thanks', to: 'reminders#thanks'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

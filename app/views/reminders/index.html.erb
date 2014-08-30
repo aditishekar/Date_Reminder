@@ -3,20 +3,44 @@
 
 <body>
 
-    <h1> DATE NIGHT POST </h1>
+    <title> DATE NIGHT POST </title>
 
-    <% flash.each do |type, msg| -%>
-    <%= content_tag :div, msg, class: type %>
-    <% end -%>
+    <section class="header_box">
 
-    <h2> Helping couples keep their spark alive.</h2>
+        <div class="index_header">
 
-    <section class="index">
-        <h3>We're re-inventing Date Night - starting by reminding of you of the most important dates in your relationship. If you could use some help, sign up for our free reminder service below. We'll also send you some awesome ideas for how to spend those days (& nights).</h3><br/>
+            <div align="center">
+                <%= image_tag("datenightpost.png", :width => 205, :height => 95) %>
+            </div>
 
-        
-        <section class="reminders_form">
-        <h4>Ready to get started? Add a reminder for any date (in the past or future) that you might need help remembering! You can submit as many reminders as your heart desires.</h4>
+        </div>
+
+        <div class="nav_bar">
+          <ul class="nav_tags">
+            <li> <a href="/about">ABOUT</a></li>
+            <li> <a href="/FAQ">FAQ</a></li>
+            <li> <a href="/contact">CONTACT US</a></li>
+            <li> <a href="/thanks">SPECIAL THANKS</a></li>
+          </ul>
+        </div> <!-- /.nav_bar -->  
+
+    </section> 
+
+    <div class="elevator_pitch_box">
+        <div class="elevator_pitch">
+            <h3> HELPING COUPLES KEEP THEIR SPARK ALIVE </h3>
+            <h4>We're re-inventing Date Night - starting by reminding of you of the most important dates in your relationship. Wether you want to remember you partner's birthday or your anniversary, sign up for free reminders below. We'll also send you some awesome ideas for how to spend those days (& nights).</h4><br/>
+        </div>
+    </div>
+
+        <section class="reminders_box">
+            <% flash.each do |type, msg| -%>
+            <%= content_tag :div, msg, class: type %>
+            <% end -%>   
+
+        <div class="reminders_form">
+    
+        <h5>Ready to get started? Add a reminder for any date (in the past or future) that you might need help remembering! You can submit as many reminders as your heart desires.</h5>
         <%= form_for @email, url: confirm_path, html: {class: "input_form"} do |f| %>
     	
     	   <%= f.fields_for :reminders do |reminders_form| %>
@@ -66,13 +90,11 @@
         	<%= f.check_box :opt_in, {:checked=>true} %>
         	<%= f.label :opt_in, "Yes, I'd like to receive juicy updates from Date Night Post.", class: "opt_in" %><br/><br/><br/>
 
-          	<%= f.submit "SUBMIT", class: "submit_button" %>
+          	<%= f.submit "SUBMIT", class: "submit_button" %><br/><br/>
 
         <% end %>
-
+        </div>
         </section>
-
-    </section>
 
 <!-- FOOTER -->
 
@@ -83,7 +105,7 @@
         <li> <a href="/contact">Contact Us</a></li>
       </ul>
       <p>&copy 2014 Date Night Post, Inc.</p>
-      <p> Made with <span class="heart">&hearts;</span> in Brooklyn, NY</p>
+      <p> Built from scratch & with <span class="heart">&hearts;</span> in Brooklyn, NY</p>
     </div><!-- /.footer -->
 
 </body>
