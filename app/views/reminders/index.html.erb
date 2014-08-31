@@ -3,6 +3,7 @@
 
 <body>
 
+<div class= "container">
     <title> DATE NIGHT POST </title>
 
     <section class="header_box">
@@ -33,10 +34,10 @@
         </div>
     </div>
 
-        <section class="reminders_box">
-            <% flash.each do |type, msg| -%>
-            <%= content_tag :div, msg, class: type %>
-            <% end -%>   
+    <section class="reminders_box">
+        <% flash.each do |type, msg| -%>
+        <%= content_tag :div, msg, class: type %>
+        <% end -%>   
 
         <div class="reminders_form">
     
@@ -47,9 +48,7 @@
 
                 <%= reminders_form.label :date, 'Date*' %>
                 <%= reminders_form.date_field :date %><br/>
-     
-     <!-- Should add a section on what it's for -->
-            
+                 
                 <%= reminders_form.label :date_type, "What's this reminder for?*" %>
                 <%= reminders_form.select :date_type, ["Birthday", "Anniversary", "Plan a Date Night", "Other"] %><br/>
 
@@ -81,16 +80,20 @@
 
             <% end %>
 
-    	    <%= f.label :email, "Email*" %>:
-      	    <%= f.email_field :email %><br/>
+            <%= f.fields_for :emails do |emails_form| %>
 
-            <%= f.label :sms, "Phone Number" %>:
-            <%= f.telephone_field :sms %><br/> <br/>
+        	    <%= f.label :email, "Email*" %>:
+          	    <%= f.email_field :email %><br/>
 
-        	<%= f.check_box :opt_in, {:checked=>true} %>
-        	<%= f.label :opt_in, "Yes, I'd like to receive juicy updates from Date Night Post.", class: "opt_in" %><br/><br/><br/>
+                <%= f.label :sms, "Phone Number" %>:
+                <%= f.telephone_field :sms %><br/> <br/>
 
-          	<%= f.submit "SUBMIT", class: "submit_button" %><br/><br/>
+            	<%= f.check_box :opt_in, {:checked=>true} %>
+            	<%= f.label :opt_in, "Yes, I'd like to receive juicy updates from Date Night Post.", class: "opt_in" %><br/><br/><br/>
+
+          	    <%= f.submit "SUBMIT", class: "submit_button" %><br/><br/>
+
+            <% end %>
 
         <% end %>
         </div>
@@ -105,9 +108,10 @@
         <li> <a href="/contact">Contact Us</a></li>
       </ul>
       <p>&copy 2014 Date Night Post, Inc.</p>
-      <p> Built from scratch & with <span class="heart">&hearts;</span> in Brooklyn, NY</p>
+      <p> Built from scratch & with <span class="heart">&hearts;</span> in Brooklyn, NY.</p>
     </div><!-- /.footer -->
 
+</div>
 </body>
 
 </html>
