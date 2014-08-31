@@ -6,6 +6,13 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>  
 
+  <% if flash[:index].present? %>
+    <p class='#index'>
+      The shortened url is available <%= link_to 'http://localhost:3000/',
+    url_url(flash[:index]) %>.
+    </p>
+  <% end %>
+
   <% if flash[:about].present? %>
     <p class='#about'>
       The shortened url is available <%= link_to 'http://localhost:3000/#about',

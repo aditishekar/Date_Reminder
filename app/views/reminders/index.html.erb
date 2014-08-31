@@ -42,6 +42,7 @@
         <div class="reminders_form">
     
         <h5>Ready to get started? Add a reminder for any date (in the past or future) that you might need help remembering! You can submit as many reminders as your heart desires.</h5>
+        
         <%= form_for @email, url: confirm_path, html: {class: "input_form"} do |f| %>
     	
     	   <%= f.fields_for :reminders do |reminders_form| %>
@@ -72,15 +73,13 @@
                 <p>How should we send your reminders?</p>
 
                 <%= reminders_form.check_box :method_text %>
-                <%= reminders_form.label :method_text, "Remind me via text" %><br/>
+                <%= reminders_form.label :method_text, "Remind me via text (coming soon)" %><br/>
 
                 <%= reminders_form.check_box :method_email %>
                 <%= reminders_form.label :method_email, "Remind me via email" %><br/><br/>
             
 
             <% end %>
-
-            <%= f.fields_for :emails do |emails_form| %>
 
         	    <%= f.label :email, "Email*" %>:
           	    <%= f.email_field :email %><br/>
@@ -93,22 +92,21 @@
 
           	    <%= f.submit "SUBMIT", class: "submit_button" %><br/><br/>
 
-            <% end %>
-
         <% end %>
         </div>
-        </section>
+    </section>
 
 <!-- FOOTER -->
 
     <div class="footer">
       <ul class="footer-tags">
+        <li> <a href="/">Home</a></li>
         <li> <a href="/about">About</a></li>
         <li> <a href="/FAQ">FAQ</a></li>
         <li> <a href="/contact">Contact Us</a></li>
       </ul>
       <p>&copy 2014 Date Night Post, Inc.</p>
-      <p> Built from scratch & with <span class="heart">&hearts;</span> in Brooklyn, NY.</p>
+      <p> Built from scratch & with <span class="heart">&hearts;</span> in Brooklyn, NY.</p><br/><br/>
     </div><!-- /.footer -->
 
 </div>

@@ -16,15 +16,12 @@ html,
 body { 
 	height: 100%; 
 	font-family: Helvetica;
-} 
-
-body { 
 	margin: 0; 
 	padding: 0; 
-} 
+}  
 
 .container {
-	position: relative;
+	position: absolute;
 }
 
 h1 {
@@ -111,9 +108,11 @@ div.reminders_form {
 	padding: 20px 25px;
 	margin-left: auto;
     margin-right: auto;
-    height: auto;
+    height: 800px;
 	width: 75%;
 }
+
+
 
 #email_reminders_attributes_0_message {
 	height: 50px;
@@ -185,18 +184,58 @@ ul.nav_tags {
 	background-color: #ACFD0D;
 }
 
-/*-- Opt_In Styling --*/
+/*-- Email Opt_In Styling --*/
 
 .opt_in {
 	font-size: 11px;
+}
+
+/*-- About Page Styling --*/
+
+.about_section {
+	padding: 20px 25px;
+	margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: auto;
+}
+
+.about_image {
+	float: left;
+	padding-right: 25px;
+}
+
+/*-- Contact Page Styling --*/
+
+.contact_section {
+	padding: 20px 25px;
+	margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.contact_three_columns {
+	text-align: center;
+	width: 500px;
+	margin: auto;
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+
+    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10px; /* Firefox */
+    column-gap: 10px;
 }
 
 /*-- Footer Styling --*/
 
 .footer {
 	position: relative;
-	top: 180px;
+	float: bottom;
+	border-top: 1px solid #EFEFEF;
+	margin-top: 20px;
 	padding-left: 1em;
+	padding-bottom: 10px;
 	font-size: 0.8em;
 	text-align: center;
 }
